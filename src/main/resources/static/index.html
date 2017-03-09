@@ -11,32 +11,44 @@
 </head>
 <body ng-app="app">
 	<header>
-		<h1>Guitar Calculator</h1>
+		<div style="background-color:#c6a05a; height:48px;">
+			<img src="images/fret-calc.png"> <div style="display:inline-block;position:absolute;color:#fff;font-weight:bold;font-size:24px;top:20px;left:60px">Guitar Calculator</div>
+		</div>
 	</header>
+	<br/>
 
 	<div class="tab-content">
 		<input class="tab" type="radio" id="tab1" name="tab" checked><label
-			for="tab1">Fret Positions</label> <input class="tab" type="radio" id="tab2"
-			name="tab"><label for="tab2">Bridge Position</label> <input
-			class="tab" type="radio" id="tab3" name="tab"><label for="tab3">Fingerboard
-			Size</label> <input class="tab" type="radio" id="tab4" name="tab"><label for="tab4">Various Fret Positions</label>
+			for="tab1">Fret Positions</label> <input class="tab" type="radio"
+			id="tab2" name="tab"><label for="tab2">Bridge
+			Position</label> <input class="tab" type="radio" id="tab3" name="tab"><label
+			for="tab3">Fingerboard Size</label> <input class="tab" type="radio"
+			id="tab4" name="tab"><label for="tab4">Various Fret
+			Positions</label>
 		<div class="tab-box">
 			<div id="fret-positions-tab" ng-controller="fretPositionController">
 				<form ng-submit="calcFretPositions()">
-					<label>
-							<span>Scale</span> <input type="text" ng-model="scale" />
-					</label>
-					<label>
-							<span>Num Frets</span> <input type="text" ng-model="numFrets" />
-					</label>
-					<input type="submit" id="calcFretButton" value="Calculate"/>
+					<table class="formTable">
+						<tbody>
+							<tr>
+								<th>Scale</th>
+								<td><input type="text" ng-model="scale" size="4" />mm</td>
+							</tr>
+							<tr>
+								<th>Number of frets</th>
+								<td><input type="text" ng-model="numFrets" size="4"/></td>
+							</tr>
+						</tbody>
+					</table>
+					<br /> <input type="submit" id="calcFretButton" value="Calculate" />
 				</form>
+				<br />
 				<table class="dataTable">
 					<thead>
 						<tr>
-							<th nowrap>Fret #</th>
-							<th nowrap>Position From Nut (mm)</th>
-							<th nowrap>Position From Fret (mm)</th>
+							<th>Fret #</th>
+							<th>Position From Nut (mm)</th>
+							<th>Position From Fret (mm)</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -48,10 +60,53 @@
 					</tbody>
 				</table>
 			</div>
-			<div id="bridge-position-tab" ng-controller="bridgePositionController">
+			<div id="bridge-position-tab"
+				ng-controller="bridgePositionController">
+				<form ng-submit="calcBridgePosition()">
+					<table class="formTable">
+						<tbody>
+							<tr>
+								<th>Scale</th>
+								<td><input type="text" ng-model="scale" size="4"/>mm</td>
+							</tr>
+							<tr>
+								<th>Joint Position</th>
+								<td><input type="text" ng-model="jointPos"  size="4"/>mm</td>
+							</tr>
+							<tr>
+								<th>Neck Angle</th>
+								<td><input type="text" ng-model="neckAngle"  size="4"/>deg.</td>
+							</tr>
+							<tr>
+								<th>String Height (12 fret)</th>
+								<td><input type="text" ng-model="stringHeight"  size="4"/>mm</td>
+							</tr>
+							<tr>
+								<th>Fret Height</th>
+								<td><input type="text" ng-model="fretHeight"  size="4"/>mm</td>
+							</tr>
+							<tr>
+								<th>Fingerboard Thickness</th>
+								<td><input type="text" ng-model="thickness"  size="4"/>mm</td>
+							</tr>
+							<tr>
+							<td colspan="2"><input type="submit" id="calcBridgeButton" value="Calculate" /></td>
+							</tr>
+							<tr>
+								<th>Saddle Position</th>
+								<td>{{ saddlePosition | number:2 }}mm</td>
+							</tr>
+							<tr>
+								<th>Saddle Height</th>
+								<td>{{ saddleHeight | number:2 }}mm</td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+				</form>
 			</div>
-			<div id="fingerboard-size-tab" ng-controller="fingerboardSizeController">
-			</div>
+			<div id="fingerboard-size-tab"
+				ng-controller="fingerboardSizeController"></div>
 			<div id="various-fret-tab" ng-controller="variousFretController">
 			</div>
 		</div>

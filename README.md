@@ -1,5 +1,5 @@
 # fret-calculator
-- Calculate fret positions of equal temperamentfor guitar builder
+- Calculate fret positions of equal temperament for guitar maker
 
 ## Goal
 - Calculate bridge position and saddle height with given scale
@@ -9,3 +9,14 @@
 ## Developed with
 - Spring-boot
 - AngularJS
+
+## REST API
+
+### Calculate fret positions of equal temperament 
+
+`/calcFretPositions?scale={number}&numFrets={number}`
+
+### Calculate saddle position and height
+
+`/calcBridgePosition?scale={number}&jointPos={number}&neckAngle={number}&stringHeight={number}&fretHeight={number}
+

@@ -29,4 +29,16 @@ public class GuitarCalculator {
 		return result;
 	}
 
+	public Map<String, Object> calcBridgePosition(float scale, float jointPos, float neckAngle, float stringHeight,
+			float fretHeight, float thickness) {
+		float base = (float) ((scale - jointPos) * Math.cos((double)neckAngle * Math.PI / 180.0f));
+	    float height = (float) ((scale - jointPos) * Math.sin((double)neckAngle * Math.PI / 180.0f));
+	    float strHeight = (stringHeight - 0.1f) * 2.0f + fretHeight;
+	    Map<String, Object> result = new HashMap<String, Object>();
+	    result.put("saddlePosition", base);
+	    result.put("saddleHeight", (height + strHeight + thickness));
+		return result;
+	}
+
+	
 }

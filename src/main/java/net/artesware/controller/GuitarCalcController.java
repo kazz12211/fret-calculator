@@ -22,4 +22,10 @@ public class GuitarCalcController {
 	public List<Map<String, Object>> calcFretPositions(@RequestParam float scale, int numFrets) {
 		return calculator.calcFretPositions(scale, numFrets);
 	}
+	
+	@GetMapping("/calcBridgePosition")
+	@ResponseBody
+	public Map<String, Object> calcBridgePosition(@RequestParam float scale, float jointPos, float neckAngle, float stringHeight, float fretHeight, float thickness) {
+		return calculator.calcBridgePosition(scale, jointPos, neckAngle, stringHeight, fretHeight, thickness);
+	}
 }
