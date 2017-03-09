@@ -1,0 +1,117 @@
+// tables
+
+table.dataTable {
+	border-collapse: collapse;
+	text-align: left;
+    line-height: 1.5;
+    border-left: 1px solid #ccc;
+}
+
+table.dataTable thead th {
+    padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 2px solid #c00;
+    background: #dcdcd1;
+}
+
+table.dataTable tbody th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #ececec;
+}
+
+table.dataTable td {
+    padding: 10px;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+table.dataTable tr:hover {
+	background-color:#ffff99;
+}
+
+table.formTable {
+	border-collapse: collapse;
+	text-align: left;
+    line-height: 1.5;
+    border-left: 1px solid #ccc;
+}
+table.formTable tbody th {
+    padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-right: 2px solid #c00;
+    border-bottom: 1px solid #ccc;
+    background: #dcdcd1;
+}
+
+table.formTable td {
+    padding: 10px;
+    vertical-align: top;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+// header
+
+// tabs
+
+.tab-content input[type="radio"] {
+	display:none;
+}
+
+.tab-content .tab {
+	display:none;
+}
+
+.tab-content label {
+	display:inline-block;
+	padding:5px 10px;
+	font-weight:bold;
+	cursor:pointer;
+	box-shadow:inset -1px 1px 2px rgb(0, 0, 0, 0.3);
+	border-radius: 5px 5px 0 0;
+	box-sizing:border-box;
+}
+
+.tab-content input+label:hover,
+.tab-content input[type="radio"]:checked + label {
+  color: #FFF;
+  background-color: #009900;
+}
+
+.tab-content .tab-box {
+	padding: 10px;
+	border: 2px solid #009900;
+	border-radius:0 5px 5px 5px;
+	box-sizing:border-box;
+}
+
+.tab-content > .tab-box > div {
+	display:none;
+}
+
+#tab1:checked ~ .tab-box > #fret-positions-tab {
+	display:block;
+}
+
+#tab2:checked ~ .tab-box > #bridge-position-tab {
+	display:block;
+}
+
+#tab3:checked ~ .tab-box > #fingerboard-size-tab {
+	display:block;
+}
+#tab4:checked ~ .tab-box > #various-fret-tab {
+	display:block;
+}
+
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width" />
+<title>Guitar Calculator</title>
+<script src="webjars/angularjs/1.6.2/angular.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/home.controller.js"></script>
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body ng-app="app">
+	<header>
+		<h1>Guitar Calculator</h1>
+	</header>
+
+	<div class="tab-content">
+		<input class="tab" type="radio" id="tab1" name="tab" checked><label
+			for="tab1">Fret Positions</label> <input class="tab" type="radio" id="tab2"
+			name="tab"><label for="tab2">Bridge Position</label> <input
+			class="tab" type="radio" id="tab3" name="tab"><label for="tab3">Fingerboard
+			Size</label> <input class="tab" type="radio" id="tab4" name="tab"><label for="tab4">Various Fret Positions</label>
+		<div class="tab-box">
+			<div id="fret-positions-tab" ng-controller="fretPositionController">
+				<form ng-submit="calcFretPositions()">
+					<label>
+							<span>Scale</span> <input type="text" ng-model="scale" />
+					</label>
+					<label>
+							<span>Num Frets</span> <input type="text" ng-model="numFrets" />
+					</label>
+					<input type="submit" id="calcFretButton" value="Calculate"/>
+				</form>
+				<table class="dataTable">
+					<thead>
+						<tr>
+							<th nowrap>Fret #</th>
+							<th nowrap>Position From Nut (mm)</th>
+							<th nowrap>Position From Fret (mm)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="fret in frets">
+							<td>{{ fret.fret }}</td>
+							<td>{{ fret.positionFromNut | number:2 }}</td>
+							<td>{{ fret.positionFromFret | number:2 }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="bridge-position-tab" ng-controller="bridgePositionController">
+			</div>
+			<div id="fingerboard-size-tab" ng-controller="fingerboardSizeController">
+			</div>
+			<div id="various-fret-tab" ng-controller="variousFretController">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
