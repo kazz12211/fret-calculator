@@ -15,6 +15,9 @@ app.factory("$req", function($http, $location) {
 		},
 		calcBridgePosition: function(scale, jointPos, neckAngle, stringHeight, fretHeight, thickness) {
 			return $http.get(url + "calcBridgePosition?scale="+scale+"&jointPos="+jointPos+"&neckAngle="+neckAngle+"&stringHeight="+stringHeight+"&fretHeight="+fretHeight+"&thickness="+thickness);
+		},
+		calcFingerboardSize : function(scale, numStrings, numFrets, nutPitch, saddlePitch, nutSpacing) {
+			return $http.get(url + "calcFingerboardSize?scale="+scale+"&numStrings="+numStrings+"&numFrets="+numFrets+"&nutPitch="+nutPitch+"&saddlePitch="+saddlePitch+"&nutSpacing="+nutSpacing);
 		}
 	}
 });

@@ -45,8 +45,27 @@ app.controller("bridgePositionController", function($scope, $req, $q) {
 	
 });
 
-app.controller("fingerboardSizeController", function($scope, $req) {
+app.controller("fingerboardSizeController", function($scope, $req, $q) {
+	$scope.scale = 635;
+	$scope.numStrings = 6;
+	$scope.numFrets = 22;
+	$scope.nutPitch = 7;
+	$scope.saddlePitch=10.5;
+	$scope.nutSpacing=3.5;
 	
+	angular.element(document).ready(function() {
+		$scope.calcFingerboardSize();
+	});
+	
+	$scope.calcFingerboardSize = function() {
+		$q.all([
+		        $req.calcFingerboardSize($scope.scale, $scope.numStrings, $scope.numFrets, $scope.nutPitch, $scope.saddlePitch, $scope.nutSpacing)
+		]).then(function(response) {
+			$scope.length = response[0].data["length"];
+			$scope.nutWidth = response[0].data["nutWidth"];
+			$scope.endWidth = response[0].data["endWidth"];
+		});
+	};
 });
 
 app.controller("variousFretController", function($scope, $req) {

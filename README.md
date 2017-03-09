@@ -20,3 +20,6 @@
 
 `/calcBridgePosition?scale={number}&jointPos={number}&neckAngle={number}&stringHeight={number}&fretHeight={number}`
 
+### Calculate fingerboard size
+
+`/calcFingerboardSize?scale={number}&numStrings={number}&numFrets={number}&nutPitch={number}&saddlePitch={number}&nutSpacing={number}`
