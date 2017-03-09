@@ -18,5 +18,5 @@
 
 ### Calculate saddle position and height
 
-`/calcBridgePosition?scale={number}&jointPos={number}&neckAngle={number}&stringHeight={number}&fretHeight={number}
+`/calcBridgePosition?scale={number}&jointPos={number}&neckAngle={number}&stringHeight={number}&fretHeight={number}`
 
