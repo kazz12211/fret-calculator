@@ -113,5 +113,15 @@ table.formTable td {
 	display:block;
 }
 
+.note {
+	margin:10px 10px 10px 10px;
+	padding:10px;
+	border: 1px solid #caba22;
+	font-weight:bold;
+	color:#b6b6b6;
+	background-color:#f4f9a5;
+	text-align:center;
+	box-shadow:inset -1px 1px 2px rgb(0, 0, 0, 0.3);
+}
 
 
