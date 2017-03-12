@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width" />
 <title>Guitar Calculator</title>
 <script src="webjars/angularjs/1.6.2/angular.js"></script>
+<script src="webjars/angular-translate/2.13.1/angular-translate.js"></script>
+<script src="webjars/angular-translate-loader-static-files/2.13.1/angular-translate-loader-static-files.js"></script>
 <script src="scripts/app.js"></script>
 <script src="scripts/home.controller.js"></script>
 <link rel="stylesheet" href="styles/style.css">
@@ -19,36 +21,35 @@
 
 	<div class="tab-content">
 		<input class="tab" type="radio" id="tab1" name="tab" checked><label
-			for="tab1">Fret Positions</label> <input class="tab" type="radio"
-			id="tab2" name="tab"><label for="tab2">Bridge
-			Position</label> <input class="tab" type="radio" id="tab3" name="tab"><label
-			for="tab3">Fingerboard Size</label> <input class="tab" type="radio"
-			id="tab4" name="tab"><label for="tab4">Various Fret
-			Positions</label>
+			for="tab1"><span translate="fretPositions"></span></label> <input class="tab" type="radio"
+			id="tab2" name="tab"><label for="tab2"><span translate="saddlePosition"></span></label> <input class="tab" type="radio" id="tab3" name="tab"><label
+			for="tab3"><span translate="fingerboardSize"></span></label> <input class="tab" type="radio"
+			id="tab4" name="tab"><label for="tab4"><span translate="variousFretting"></span></label>
 		<div class="tab-box">
 			<div id="fret-positions-tab" ng-controller="fretPositionController">
+				<p><span translate="fretPositionsNote"></span></p>
 				<form ng-submit="calcFretPositions()">
 					<table class="formTable">
 						<tbody>
 							<tr>
-								<th>Scale</th>
+								<th><span translate="scale"></span></th>
 								<td><input type="number" min="0" ng-model="scale" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1" required />mm</td>
 							</tr>
 							<tr>
-								<th>Number of frets</th>
+								<th><span translate="numberOfFrets"></span></th>
 								<td><input type="number" min="0" ng-model="numFrets" required/></td>
 							</tr>
 						</tbody>
 					</table>
-					<br /> <input type="submit" id="calcFretButton" value="Calculate" />
+					<br /> <input type="submit" id="calcFretButton"/>
 				</form>
 				<br />
 				<table class="dataTable">
 					<thead>
 						<tr>
-							<th>Fret #</th>
-							<th>Position from nut (mm)</th>
-							<th>Position from fret (mm)</th>
+							<th><span translate="fretNumber"></span></th>
+							<th><span translate="positionFromNut"></span></th>
+							<th><span translate="positionFromFret"></span></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -62,42 +63,43 @@
 			</div>
 			<div id="bridge-position-tab"
 				ng-controller="bridgePositionController">
+				<p><span translate="saddlePositionNote"></span></p>
 				<form ng-submit="calcBridgePosition()">
 					<table class="formTable">
 						<tbody>
 							<tr>
-								<th>Scale</th>
+								<th><span translate="scale"></span></th>
 								<td><input type="number" min="0" ng-model="scale" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1"　required/>mm</td>
 							</tr>
 							<tr>
-								<th>Joint position</th>
+								<th><span translate="jointPosition"></span></th>
 								<td><input type="number" min="0" ng-model="jointPos"  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1"required/>mm</td>
 							</tr>
 							<tr>
-								<th>Neck angle</th>
-								<td><input type="number" min="0" ng-model="neckAngle"  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1" required/>deg.</td>
+								<th><span translate="neckAngle"></span></th>
+								<td><input type="number" min="0" ng-model="neckAngle"  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1" required/><span translate="deg."></span></td>
 							</tr>
 							<tr>
-								<th>String height (12 fret)</th>
+								<th><span translate="stringHeight"></span></th>
 								<td><input type="number" min="0" ng-model="stringHeight" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1" required/>mm</td>
 							</tr>
 							<tr>
-								<th>Fret height</th>
+								<th><span translate="fretHeight"></span></th>
 								<td><input type="number" min="0" ng-model="fretHeight" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1"  required/>mm</td>
 							</tr>
 							<tr>
-								<th>Fingerboard thickness</th>
+								<th><span translate="fingerboardThickness"></span></th>
 								<td><input type="number" min="0" ng-model="thickness" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1" required/>mm</td>
 							</tr>
 							<tr>
-							<td colspan="2"><input type="submit" id="calcBridgeButton" value="Calculate" /></td>
+							<td colspan="2"><input type="submit" id="calcBridgeButton"/></td>
 							</tr>
 							<tr>
-								<th>Saddle position</th>
+								<th><span translate="saddleLocation"></span></th>
 								<td>{{ saddlePosition | number:2 }}mm</td>
 							</tr>
 							<tr>
-								<th>Saddle height</th>
+								<th><span translate="saddleHeight"></span></th>
 								<td>{{ saddleHeight | number:2 }}mm</td>
 							</tr>
 						</tbody>
@@ -107,46 +109,47 @@
 			</div>
 			<div id="fingerboard-size-tab"
 				ng-controller="fingerboardSizeController">
+				<p><span translate="fingerboardSizeNote"></span></p>
 				<form ng-submit="calcFingerboardSize()">
 					<table class="formTable">
 						<tbody>
 							<tr>
-								<th>Scale</th>
+								<th><span translate="scale"></span></th>
 								<td><input type="number" min="0" ng-model="scale" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1" required required/>mm</td>
 							</tr>
 							<tr>
-								<th>Number of strings</th>
+								<th><span translate="numberOfStrings"></span></th>
 								<td><input type="number" min="0" ng-model="numStrings"  required/></td>
 							</tr>
 							<tr>
-								<th>Number of frets</th>
+								<th><span translate="numberOfFrets"></th>
 								<td><input type="number" min="0" ng-model="numFrets"  required/></td>
 							</tr>
 							<tr>
-								<th>Pitch of strings at nut</th>
+								<th><span translate="pitchOfStringsAtNut"></span></th>
 								<td><input type="number" min="0" ng-model="nutPitch" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1" required/>mm</td>
 							</tr>
 							<tr>
-								<th>Pitch of strings at saddle</th>
+								<th><span translate="pitchOfStringsAtSaddle"></span></th>
 								<td><input type="number" min="0" ng-model="saddlePitch" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.1" required/>mm</td>
 							</tr>
 							<tr>
-								<th>Spacing from 1st string to edge at nut</th>
+								<th><span translate="spacing"></span></th>
 								<td><input type="number" min="0" ng-model="nutSpacing" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required/>mm</td>
 							</tr>
 							<tr>
-							<td colspan="2"><input type="submit" id="calcFingerboardButton" value="Calculate" /></td>
+							<td colspan="2"><input type="submit" id="calcFingerboardButton" /></td>
 							</tr>
 							<tr>
-								<th>Fingerboard length</th>
+								<th><span translate="fingerboardLength"></span></th>
 								<td>{{ length | number:2 }}mm</td>
 							</tr>
 							<tr>
-								<th>Fingerboard width at nut</th>
+								<th><span translate="fingerboardWidthAtNut"></span></th>
 								<td>{{ nutWidth | number:2 }}mm</td>
 							</tr>
 							<tr>
-								<th>Fingerboard width at end</th>
+								<th><span translate="fingerboardWidthAtEnd"></span></th>
 								<td>{{ endWidth | number:2 }}mm</td>
 							</tr>
 						</tbody>
@@ -155,7 +158,8 @@
 				</form>
 			</div>
 			<div id="various-fret-tab" ng-controller="variousFretController">
-				<p class="note">Not yet implemented</p>
+				<p><span translate="variousFrettingNote"></span></p>
+				<p class="note"><span translate="notYetImplemented"></span></p>
 			</div>
 		</div>
 	</div>
