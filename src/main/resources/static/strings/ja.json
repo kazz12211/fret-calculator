@@ -27,5 +27,6 @@
 	"fingerboardWidthAtNut" : "ナット位置での指板の幅",
 	"fingerboardWidthAtEnd" : "指板の終端の幅",
 	"notYetImplemented" : "まだ実装していません。",
-	"deg." : "度"
+	"deg." : "度",
+	"sourceCode" : "ソースコードを取得:"
 }

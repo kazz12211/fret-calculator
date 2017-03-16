@@ -27,5 +27,6 @@
 	"fingerboardWidthAtNut" : "Fingerboard width at nut",
 	"fingerboardWidthAtEnd" : "Fingerboard width at end",
 	"notYetImplemented" : "Not yet implemented",
-	"deg." : "degree"
+	"deg." : "degree",
+	"sourceCode" : "Get source code:"
 }
