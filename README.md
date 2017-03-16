@@ -1,5 +1,7 @@
 # fret-calculator
-- Calculator application for guitar makers
+
+Calculator application for guitar makers.
+This application is hosted on heroku at <a href="https://guitar-calc.herokuapp.com" target="__blank">https://guitar-calc.herokuapp.com</a>.
 
 ## Tabs
 - Calculate fret positions of equal temerament
