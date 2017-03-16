@@ -45,3 +45,9 @@ Please leave issues under the Issues tab. Enhancement requests are welcome. If y
 ## License
 
 fret-calculator is available under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.
+
+## About a creator of this application
+
+I'm a freelance programmer and a guitar maker at Tsubaki Kougei (name of our workshop) in Japan. 
+The workshop delivers customer guitars, wooden products, leather craft products and canvas products locally.
+The workshop blog is <a href="http://tsubakicraft.wordpress.com" target="__blank">http://tsubakicraft.wordpress.com</a>.
