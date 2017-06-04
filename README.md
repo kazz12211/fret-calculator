@@ -4,7 +4,7 @@ Calculator application for guitar makers.
 This application is hosted on heroku at <a href="https://guitar-calc.herokuapp.com" target="__blank">https://guitar-calc.herokuapp.com</a>.
 
 ## Tabs
-- Calculate fret positions of equal temerament
+- Calculate fret positions of equal temperament
 - Calculate saddle position and saddle height with given scale
 - Calculate finger board size
 - Calculate fret positions for various temperament
@@ -49,5 +49,5 @@ fret-calculator is available under the <a href="https://opensource.org/licenses/
 ## About a creator of this application
 
 I'm a freelance programmer and a guitar maker at Tsubaki Kougei (name of our workshop) in Japan. 
-The workshop delivers customer guitars, wooden products, leather craft products and canvas products locally.
+The workshop delivers custom guitars, wooden products, leather craft products and canvas products locally.
 The workshop blog is <a href="http://tsubakicraft.wordpress.com" target="__blank">http://tsubakicraft.wordpress.com</a>.
