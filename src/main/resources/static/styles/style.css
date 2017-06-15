@@ -124,4 +124,14 @@ table.formTable td {
 	box-shadow:inset -1px 1px 2px rgb(0, 0, 0, 0.3);
 }
 
+.error-note {
+	margin:10px 10px 10px 10px;
+	padding:10px;
+	border: 1px solid #caba22;
+	font-weight:bold;
+	color:#ff0000;
+	background-color:#EEBBBB;
+	text-align:center;
+	box-shadow:inset -1px 1px 2px rgb(0, 0, 0, 0.3);
+}
 
